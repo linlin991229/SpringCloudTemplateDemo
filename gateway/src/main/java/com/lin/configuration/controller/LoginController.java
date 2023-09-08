@@ -15,8 +15,8 @@ public class LoginController {
     public LinResult login(@RequestBody User user) {
         if ("admin".equals(user.getUsername()) && "123".equals(user.getPassword())) {
             StpUtil.login(1);
-            return new LinResult().success().setMessage("登录成功").data(StpUtil.getTokenValue());
+            return LinResult.success().setMessage("登录成功").data("tokenInfo", StpUtil.getTokenValue());
         }
-        return new LinResult().error().setMessage("登录失败");
+        return LinResult.error().setMessage("登录失败");
     }
 }

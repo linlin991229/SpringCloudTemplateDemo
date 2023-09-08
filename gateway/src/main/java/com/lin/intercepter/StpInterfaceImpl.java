@@ -1,6 +1,7 @@
 package com.lin.intercepter;
 
 import cn.dev33.satoken.stp.StpInterface;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class StpInterfaceImpl implements StpInterface {
     }
 
     @Override
-    public List<String> getRoleList(Object loginId, String loginType) {
+    public List<String> getRoleList(@NotNull Object loginId, String loginType) {
         System.out.println(loginType);
 
         ArrayList<String> roles = new ArrayList<>();

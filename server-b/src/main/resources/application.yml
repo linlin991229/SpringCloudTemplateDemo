@@ -9,3 +9,4 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        cluster-name: CD #配置集群名称,安照地域划分

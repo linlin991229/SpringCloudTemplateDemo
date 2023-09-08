@@ -1,0 +1,13 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: nacos-config-example
+  cloud:
+    nacos:
+      config:
+        serverAddr: 127.0.0.1:8848
+  config:
+    import:
+      - nacos:server-a-dev.yaml?refresh=true

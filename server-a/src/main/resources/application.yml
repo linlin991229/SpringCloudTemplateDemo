@@ -1,3 +1,6 @@
+server:
+  port: 8091
+
 spring:
   application:
     name: server-a
@@ -5,6 +8,15 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-server:
-  port: 8091
-
+        cluster-name: CD
+    openfeign:
+      client:
+        config:
+          default:
+            loggerLevel: full
+      httpclient:
+        hc5:
+          enabled: true
+    loadbalancer:
+      nacos:
+        enabled: true #使用nacos负载均衡策略

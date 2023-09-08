@@ -8,6 +8,6 @@ public class LinClientFallback implements LinClient {
 
     @Override
     public LinResult echo(String str) {
-        return new LinResult().error().setMessage("echo fallback");
+        return LinResult.error().setMessage("echo fallback");
     }
 }

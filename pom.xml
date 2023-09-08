@@ -13,6 +13,7 @@
         <module>server-b</module>
         <module>common</module>
         <module>gateway</module>
+        <module>server-c</module>
     </modules>
 
     <packaging>pom</packaging>

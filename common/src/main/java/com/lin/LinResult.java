@@ -23,19 +23,21 @@ public class LinResult implements Serializable {
 
     private Map<String, Object> data = new HashMap<>();
 
-    public LinResult() {
+    private LinResult() {
     }
 
-    public LinResult success() {
-        this.code = 2000;
-        this.message = "操作成功";
-        return this;
+    public static LinResult success() {
+        LinResult linResult = new LinResult();
+        linResult.code = ResponseStatus.SUCCESS.getCodeName();
+        linResult.message = ResponseStatus.SUCCESS.getMessageName();
+        return linResult;
     }
 
-    public LinResult error() {
-        this.code = 2001;
-        this.message = "操作失败";
-        return this;
+    public static LinResult error() {
+        LinResult linResult = new LinResult();
+        linResult.code = ResponseStatus.FAILURE.getCodeName();
+        linResult.message = ResponseStatus.FAILURE.getMessageName();
+        return linResult;
     }
 
     public LinResult setCode(Integer code) {
@@ -50,11 +52,6 @@ public class LinResult implements Serializable {
 
     public LinResult setData(Map<String, Object> data) {
         this.data = data;
-        return this;
-    }
-
-    public LinResult data(Object data) {
-        this.data.put("data", data);
         return this;
     }
 
